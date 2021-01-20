@@ -42,13 +42,7 @@
 
           <div class="appBoxes deWeBoxes">
             <div class="appBox-sizer"></div>
-            <div class="appBox">
-              <div>
-                <img src="/gold/img/app_thumb/app_001.png" alt="">
-                <h2>Calory Checker</h2>
-                <a href="#">View Details</a>
-              </div>
-            </div>
+            
           </div>
         
           <div class="btns">
@@ -81,6 +75,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="/gold/js/custom.js"></script>
     <script src="/gold/js/web_design_page.js"></script>
     <script src="/gold/js/app.js"></script>
