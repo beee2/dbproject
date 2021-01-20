@@ -1,5 +1,9 @@
 $(function(){
 
+let count=4;
+let allData=[];
+let addData=0;
+
   $('.appBoxes').masonry({
     // options
     itemSelector: '.appBox',
@@ -7,16 +11,28 @@ $(function(){
     percentPosition: true
   });
 
-  $.getJSON("/gold/data/json/app.json", function(data){
+  $.getJSON("/gold/data/json/app.json", initAppData);
+
+  function initAppData(data){
+    allData=data;
+    addAppData();
+
+    $(".appLoadMore").on("click",addAppData);
+  }
+
+  function addAppData(e){
+    e.preventDefault();
     // console.log(data[0].appclient);
     let items=[];
-    $.each(data, function(i, item){
+
+    let slicedData=allData.slice(addData, addData+count);
+    $.each(slicedData, function(i, item){
       //console.log(item);
       let itemHTML=`<div class="appBox">
                     <div>
                       <img src="/gold/data/app_page/app_thumb${item.appthumb}" alt="">
                       <h2>${item.apptitle}</h2>
-                      <a href="#">View Details</a>
+                      <a href="/gold/pages/app/app_detail.php?num=${item.appnum}">View Details</a>
                     </div>
                   </div>`;
       items.push($(itemHTML).get(0));
@@ -28,6 +44,7 @@ $(function(){
       //$(items).removeClass("is-loading");
       $(".appBoxes").masonry('appended', items);
     });
-  });
 
+    addData+=slicedData.length;
+  }
 });
