@@ -42,24 +42,24 @@
 
           <!-- design input contents form -->
           <div class="designInputFrom webDesignInput">
-            <form action="/gold/php_process/pages/design_insert.php" method="post" name="design_form" enctype="multipart/form-data">
+            <form action="/gold/php_process/pages/app_insert.php" method="post" name="app_form" enctype="multipart/form-data">
               <div class="titleSer clear">
                 <p class="title_input">
                   <label for="title">Title</label>
-                  <input type="text" placeholder="Title Here" id="title" name="design_title">
+                  <input type="text" placeholder="Title Here" id="title" name="app_title">
                 </p>
                 <p class="serial_input">
                   <label for="serial">SerialNo.</label>
-                  <input type="text" placeholder="SerialNo. Here" id="serial" name="desgin_serial">
+                  <input type="text" placeholder="SerialNo. Here" id="serial" name="app_serial">
                 </p>
                 <p class="client_input">
                   <label for="client">Client</label>
-                  <input type="text" placeholder="Client Name" id="client" name="desgin_client">
+                  <input type="text" placeholder="Client Name" id="client" name="app_client">
                 </p>
               </div>
               <!-- end of title, serial, client input  -->
-              <div class="design_desc uploadDesc">
-                <textarea name="design_desc" placeholder="Design Description Here..."></textarea>
+              <div class="app_desc uploadDesc">
+                <textarea name="app_desc" placeholder="Design Description Here..."></textarea>
               </div>
               <!-- end of text description -->
               <div class="uploadImgs clear">
@@ -67,7 +67,7 @@
                   <div class="inputControll">
                     <input class="uploadName" placeholder="Main Image">
                     <label for="mainImage">SELECT IMAGE</label>
-                    <input type="file" id="mainImage" class="uploadHidden" name="main">
+                    <input type="file" id="mainImage" class="uploadHidden" name="app_main">
                   </div>
                   <div class="img1_box imgWrap">
                     <img id="img1">
@@ -77,7 +77,7 @@
                   <div class="inputControll">
                     <input class="uploadName" placeholder="Sub Image">
                     <label for="subImage">SELECT IMAGE</label>
-                    <input type="file" id="subImage" class="uploadHidden" name="sub">
+                    <input type="file" id="subImage" class="uploadHidden" name="app_sub">
                   </div>
                   <div class="img2_box imgWrap">
                     <img id="img2">
@@ -110,46 +110,41 @@
 
       submitBtn.addEventListener('click', function(e){
         e.preventDefault();
-        if(!document.design_form.design_title.value){
+        if(!document.app_form.app_title.value){
           alert('상품명을 입력해 주세요!');
-          document.design_form.design_title.focus();
+          document.app_form.app_title.focus();
           return;
         }
 
-        if(!document.design_form.desgin_serial.value){
+        if(!document.app_form.app_serial.value){
           alert('시리얼 넘버를 입력해 주세요!');
-          document.design_form.desgin_serial.focus();
+          document.app_form.app_serial.focus();
           return;
         }
 
-        if(!document.design_form.desgin_client.value){
+        if(!document.app_form.app_client.value){
           alert('납품 업체명을 입력해 주세요!');
-          document.design_form.desgin_client.focus();
+          document.app_form.app_client.focus();
           return;
         }
 
-        if(!document.design_form.design_desc.value){
+        if(!document.app_form.app_desc.value){
           alert('상품 설명을 입력해 주세요!');
-          document.design_form.design_desc.focus();
+          document.app_form.app_desc.focus();
           return;
         }
 
-        if(!document.design_form.main.value){
+        if(!document.app_form.app_main.value){
           alert('메인 사진을 입력해 주세요!');
           return;
         }
 
-        if(!document.design_form.sub.value){
+        if(!document.app_form.app_sub.value){
           alert('서브 사진을 입력해 주세요!');
           return;
         }
 
-        if(!document.design_form.thumbnail.value){
-          alert('썸네일 사진을 입력해 주세요!');
-          return;
-        }
-
-        document.design_form.submit();
+        document.app_form.submit();
       });
     </script>
   </body>

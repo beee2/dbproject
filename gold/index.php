@@ -157,24 +157,24 @@
             </div>
 
             <?php
-              //include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
-              $sql="select * from gold_app order by GOLD_APP_num desc limit 3";
+              include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
+              $sql="select * from gold_web order by GOLD_WEB_num desc limit 3";
 
-              $app_result = mysqli_query($dbConn, $sql);
+              $web_result = mysqli_query($dbConn, $sql);
 
-              while($app_row = mysqli_fetch_array($app_result)){
-                $app_num = $app_row['GOLD_APP_num'];
-                $app_thumb = $app_row['GOLD_APP_thumb'];
-                $app_tit = $app_row['GOLD_APP_tit'];
-                $app_des = $app_row['GOLD_APP_des'];
+              while($web_row = mysqli_fetch_array($web_result)){
+                $web_num = $web_row['GOLD_WEB_num'];
+                $web_thumb = $web_row['GOLD_WEB_thumb'];
+                $web_tit = $web_row['GOLD_WEB_tit'];
+                $web_des = $web_row['GOLD_WEB_des'];
             ?>
-            <!-- app box loop start -->
+
             <div class="fasionImg">
               <div>
-                <img src="/gold/data/app_page/app_thumb/<?=$app_thumb?>" alt="" />
-                <h2><?=$app_tit?></h2>
-                <em class="cutTxt"><?=$app_des?></em>
-                <a href="/gold/pages/app/app_detail.php?num=<?=$app_num?>">View Details</a>
+                <img src="/gold/data/web_page/thumb/<?=$web_thumb?>" alt="" />
+                <h2><?=$web_tit?></h2>
+                <em class="cutTxt"><?=$web_des?></em>
+                <a href="/gold/pages/web/web_detail.php?num=<?=$web_num?>">View Details</a>
               </div>
             </div>
             <!-- loop box -->
@@ -192,23 +192,37 @@
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry.
               </p>
-              <a href="#">view more</a>
+              <a href="/gold/pages/app/app.php">view more</a>
             </div>
+
+            <?php
+              //include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
+              $sql="select * from gold_app order by GOLD_APP_num desc limit 3";
+
+              $app_result = mysqli_query($dbConn, $sql);
+
+              while($app_row = mysqli_fetch_array($app_result)){
+                $app_num = $app_row['GOLD_APP_num'];
+                $app_thumb = $app_row['GOLD_APP_thumb'];
+                $app_tit = $app_row['GOLD_APP_tit'];
+                $app_des = $app_row['GOLD_APP_des'];
+            ?>
+
+            <!-- app box loop start -->
             <div class="fasionImg">
               <div>
-                <img src="img/product-type-1.jpg" alt="" />
+                <img src="/gold/data/app_page/app_thumb/<?=$app_thumb?>" alt="" />
+                <h2><?=$app_tit?></h2>
+                <em class="cutTxt"><?=$app_des?></em>
+                <a href="/gold/pages/app/app_detail.php?num=<?=$app_num?>">View Details</a>
               </div>
             </div>
-            <div class="fasionImg">
-              <div>
-                <img src="img/product-type-2.jpg" alt="" />
-              </div>
-            </div>
-            <div class="fasionImg">
-              <div>
-                <img src="img/product-type-3.jpg" alt="" />
-              </div>
-            </div>
+            <!-- loop box -->
+
+            <?php
+              }
+            ?>
+
           </div>
           <!-- end of app project -->
         </div>
@@ -297,6 +311,7 @@
           });
           cutTxt()
         }   
+
       });
     </script>
   </body>

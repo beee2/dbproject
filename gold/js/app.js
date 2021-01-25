@@ -1,8 +1,8 @@
 $(function(){
 
-let count=4;
-let allData=[];
-let addData=0;
+  let count = 4;
+  let addData = 0;
+  let allData =  [];
 
   $('.appBoxes').masonry({
     // options
@@ -14,27 +14,25 @@ let addData=0;
   $.getJSON("/gold/data/json/app.json", initAppData);
 
   function initAppData(data){
-    allData=data;
+    allData = data;
     addAppData();
 
-    $(".appLoadMore").on("click",addAppData);
+    $(".appLoadMore").on("click", addAppData);
   }
 
-  function addAppData(e){
-    e.preventDefault();
-    // console.log(data[0].appclient);
-    let items=[];
-
-    let slicedData=allData.slice(addData, addData+count);
+  function addAppData(){
+    //console.log(data[0].appclient);
+    let items = [];  
+    let slicedData = allData.slice(addData, addData + count);
     $.each(slicedData, function(i, item){
       //console.log(item);
-      let itemHTML=`<div class="appBox">
-                    <div>
-                      <img src="/gold/data/app_page/app_thumb${item.appthumb}" alt="">
-                      <h2>${item.apptitle}</h2>
-                      <a href="/gold/pages/app/app_detail.php?num=${item.appnum}">View Details</a>
-                    </div>
-                  </div>`;
+      let itemHTML = `<div class="appBox">
+                      <div>
+                        <img src="/gold/data/app_page/app_thumb/${item.appthumb}" alt="">
+                        <h2>${item.apptitle}</h2>
+                        <a href="/gold/pages/app/app_detail.php?num=${item.appnum}">View Details</a>
+                      </div>
+                    </div>`;
       items.push($(itemHTML).get(0));
     });
 
@@ -45,6 +43,6 @@ let addData=0;
       $(".appBoxes").masonry('appended', items);
     });
 
-    addData+=slicedData.length;
+    addData += slicedData.length;
   }
 });

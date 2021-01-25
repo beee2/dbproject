@@ -55,7 +55,7 @@
             <?php
               } else {
             ?>
-              <a href="#" class="commonBtn appLoadMore">Loard More</a>
+              <button class="commonBtn appLoadMore">Loard More</button>
               <a href="#" class="commonBtn toTop">Go To Top</a>
             <?php
               }
