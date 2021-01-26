@@ -43,3 +43,15 @@
 .qnaBoxes .writeBox p textarea{width:100%; height:150px; padding:5px; border:1px solid #d0af51; resize:none;}
 
 .qnaBoxes .writeBox button{border: 1px solid #d0af51; background: #d0af51; color: #fff; text-align: center; padding: 5px 30px; margin-top: 5px; float: right;}
+
+/* qna view style */
+.qnaBoxes .qnaView{width: 100%; height: auto;}
+.qnaView .writerInfo,
+.qnaView .writerDesc
+{width: 100%; height:auto; margin: auto; border: 1px solid #d0af51; box-sizing: border-box;}
+.qnaView .writerInfo{border-bottom: none;}
+.qnaView .writerInfo h3{font-weight:700; font-size: 30px;}
+.qnaView h3,
+.qnaView p{color: #d0af51; font-weight: 600; padding: 20px; }
+.qnaView .writerInfo{padding: 5px auto 0;}
+.qnaView button{margin-left: 5px;}
