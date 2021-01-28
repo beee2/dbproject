@@ -1,4 +1,33 @@
-CREATE TABLE `test`.`gold_mem` (
+-- phpMyAdmin SQL Dump
+-- version 5.0.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- 생성 시간: 21-01-15 08:06
+-- 서버 버전: 10.4.16-MariaDB
+-- PHP 버전: 7.4.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- 데이터베이스: `test`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `gold_mem`
+--
+
+CREATE TABLE `gold_mem` (
   `GOLD_mem_num` int(11) NOT NULL COMMENT '고유번호',
   `GOLD_mem_id` varchar(30) CHARACTER SET utf8 NOT NULL COMMENT '아이디',
   `GOLD_mem_name` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT '이름',

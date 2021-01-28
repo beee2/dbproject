@@ -46,10 +46,8 @@
           <div class="qnaBoxes deWeBoxes">
             <div class="qnaTable">
               <ul class="qnaList">
-
-                <!-- ajax code inside here -->
-
                 
+              <!-- ajax code inside here -->
 
               </ul>
             </div>
@@ -67,40 +65,35 @@
                 </form>
               </div>
               <div class="paging">
-                <span class="firstPg" onclick="goFirst()"><i class="fa fa-angle-double-left"></i></span>
+                <span class="firstPg" onclick="firstPage()"><i class="fa fa-angle-double-left"></i></span>
                 <span class="prevPg" onclick="goPrev()"><i class="fa fa-angle-left"></i></span>
 
                 <?php
-                  //database connect
-                  include $_SERVER['DOCUMENT_ROOT']."/gold/php_process/connect/db_connect.php";
-                  $sql="select*from gold_qna order by GOLD_QNA_num desc";
+                //database connect
+                include $_SERVER['DOCUMENT_ROOT']."/gold/php_process/connect/db_connect.php";
+                $sql="select * from gold_qna order by GOLD_QNA_num desc";
 
-                  $paging_result=mysqli_query($dbConn,$sql);
-                  $total_record=mysqli_num_rows($paging_result);
-                  $scale=5;
+                $paging_result=mysqli_query($dbConn, $sql);
+                $total_record=mysqli_num_rows($paging_result);
+                $scale=5;
 
-                  if($total_record%$scale==0){
-                    $total_page=floor($total_record/$scale);
-                  }
-                  else{
-                    $total_page=floor($total_record/$scale)+1;
-                  }
+                if($total_record % $scale == 0){
+                  $total_page=floor($total_record/$scale);
+                } else {
+                  $total_page=floor($total_record/$scale) + 1;
+                }
 
-                  for($i=1; $i<=$total_page; $i++){
-
-                  
+                for($i=1; $i<=$total_page; $i++){
                 ?>
 
                 <span class="PgNum" onclick="getPage(<?=$i?>)"><?=$i?></span>
-                <!-- page click event -->
 
                 <?php
-                  }
+                }
                 ?>
-                <!-- page numbering php section -->
 
                 <span class="nextPg" onclick="goNext()"><i class="fa fa-angle-right"></i></span>
-                <span class="lastPg" onclick="goLast()"><i class="fa fa-angle-double-right"></i></span>
+                <span class="lastPg" onclick="lastPage()"><i class="fa fa-angle-double-right"></i></span>
               </div>
             </div>
             <!-- end of search paging -->
@@ -112,8 +105,6 @@
                 if($userid==''){
                 ?>
                 <span><a href="/gold/pages/login/login_form.php">로그인</a></span>
-                
-
                 <?php
                 } else {
                 ?>
@@ -133,13 +124,13 @@
                 </p>
               </form>
               <?php
-               if($userid==''){
+              if($userid==''){
               ?>
-                <button type="submit" onclick="plzLogin()">등록</button>
+              <button type="submit" onclick="plzLogin()">등록</button>
               <?php
-              }else{
+              } else {
               ?>
-                <button type="submit" class="qnaSubmit">등록</button>
+              <button type="submit" class="qnaSubmit">등록</button>
               <?php
               }
               ?>
@@ -161,34 +152,30 @@
     <script src="/gold/js/web_design_page.js"></script>
     <script src="/gold/js/qna_ajax.js"></script>
     <script>
+      const qnaSubmit = document.querySelector(".qnaSubmit");
+      qnaSubmit.addEventListener('click', insertQan);
 
-      const qnaSubmit=document.querySelector(".qnaSubmit");
-      const plzLogin=document.querySelector(".plzLogin");
-      plzLogin.addEventListener('click',tryLogin);
-      qnaSubmit.addEventListener('click',insertQna);
-      
-      function tryLogin(){
-        if($userid==''){
-          alert("로그인을 해주세요.");
-          return;
-        }
+      function plzLogin(){
+        alert('글쓰기를 하시려면 로그인이 필요합니다.');
       }
-      
-      function insertQna(){
+
+      function insertQan(){
         if(!document.writeForm.qnaTitle.value){
-          alert("제목을 입력해주세요.");
+          alert("제목을 입력해 주세요.");
           document.writeForm.qnaTitle.focus();
           return;
         }
 
         if(!document.writeForm.qnaTxt.value){
-          alert("내용을 입력해주세요.");
+          alert("내용을 입력해 주세요.");
           document.writeForm.qnaTxt.focus();
           return;
         }
+
         document.writeForm.submit();
       }
+
+      
     </script>
-    
   </body>
 </html>

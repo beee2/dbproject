@@ -1,4 +1,4 @@
-CREATE TABLE `test`.`gold_mem` (
+CREATE TABLE `gold_mem` (
   `GOLD_mem_num` int(11) NOT NULL COMMENT '고유번호',
   `GOLD_mem_id` varchar(30) CHARACTER SET utf8 NOT NULL COMMENT '아이디',
   `GOLD_mem_name` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT '이름',

@@ -81,9 +81,9 @@
   /* app detail page style */
   .appFramebox>span.frameTop{background-size:contain;}
 
-  /* qna page stlye */
-  .qnaBoxes .searchSelect{width: 25%;}
-  .qnaBoxes .qnaSearchInput{width: 60%;}
+  /* qna page style */
+  .qnaBoxes .searchSelect{width:25%;}
+  .qnaBoxes .qnaSearchInput{width:60%;}
 }
 
 @media screen and (max-width:800px){
@@ -147,15 +147,22 @@
   .appFramebox>span.frameTop{background-size:cover;}
 
   /* qna page style */
-  .qnaBoxes .searchPaging>div{width: 100%;}
+  .qnaBoxes .searchPaging>div{width:100%;}
+  .qnaBoxes .qnaSearch{display:flex; justify-content: space-evenly;}
+  .qnaBoxes .qnaSearchBtn{width:10%;}
   .qnaBoxes .searchPaging>div.paging{justify-content: center;}
-  .qnaBoxes .qnaSearch{display: flex; justify-content: space-evenly;}
-  .qnaBoxes .qnaSearchBtn{width: 13%;}
 
-  .qnaBoxes .writeBox p label{font-size: 12px;}
-  .qnaBoxes .writeBox p input{font-size: 12px;}
-  .qnaBoxes .writeBox p textarea{font-size: 12px;}
-  .qnaBoxes .writeBox button{font-size: 12px;}
+  .qnaBoxes .writeBox p label{font-size:12px;}
+  .qnaBoxes .writeBox p input{font-size:12px;}
+  .qnaBoxes .writeBox p textarea{font-size:12px;}
+  .qnaBoxes .writeBox button,
+  .qnaBoxes .writeBox a{font-size:12px;}
+
+  /* qna view page style */
+  .qnaView .answerBox .ansInputForm textarea{font-size:12px;}
+  .qnaView .answerBox .ansInputForm button{font-size:12px;}
+
+  .qnaView .ansResult p{font-size:12px;}
 }
 
 @media screen and (max-width:700px){
@@ -205,13 +212,12 @@
 
   /* app detail page style */
   .appFramebox>span.frameTop{background-size:cover;}
-  
-  /* qna page style */
-  .qnaBoxes .qnaTable li span{font-size: 12px;}
-  .qnaBoxes .searchSelect{_height: 25px; font-size: 12px;}
-  .qnaBoxes .qnaSearchInput{_height: 25px; font-size: 12px;}
-  .qnaBoxes .qnaSearchBtn{_width: 25px; _height: 25px;}
 
+  /* qna page style */
+  .qnaBoxes .qnaTable li span{font-size:12px;}
+  .qnaBoxes .searchSelect{_height:25px; font-size:12px;}
+  .qnaBoxes .qnaSearchInput{_height:25px; font-size:12px;}
+  .qnaBoxes .qnaSearchBtn{_width:25px; _height:25px;}
 }
 
 @media screen and (max-width:600px){
@@ -244,10 +250,19 @@
   .appBoxes .appBox>div h2{font-size:14px;}
 
   /* qna page style */
-  .qnaBoxes .qnaTable li span.qnaReg{display: none;}
-  .qnaBoxes .qnaTable li span.qnaId{width: 25%;}
-  .qnaBoxes .qnaTable li span.qnaHit{}
+  .qnaBoxes .qnaTable li span.qnaReg{display:none;}
+  .qnaBoxes .qnaTable li span.qnaId{width:25%;}
+  .qnaBoxes .qnaTable li span.qnaHit{width:15%;}
 
+  /* qna view page style */
+  .qnaView .answerBox .ansInputForm{flex-wrap:wrap;}
+  .qnaView .answerBox .ansInputForm .ansBtnBox{width:100%; padding-left:0; margin-top:3px;}
+  .qnaView .answerBox .ansInputForm textarea{width:100%;}
+  .qnaView .answerBox .ansInputForm button{padding:5px 0;}
+
+  .qnaView .ansResult{flex-wrap:wrap;}
+  .qnaView .ansResult p.adminId{width:100%; height:auto; padding:5px; border:1px solid #d0af51; justify-content: start; margin-bottom:5px;}
+  .qnaView .ansResult p.ansResultTxt{width:100%;}
 }
 
 @media screen and (max-width:480px){
@@ -322,16 +337,26 @@
   .appStoreBtns a{width:40%;}
 
   /* qna page style */
-  .qnaBoxes .qnaTable{width: 90%;}
-  .qnaBoxes .qnaTable li span.qnaTit{width: 60%;}
-  .qnaBoxes .qnaTable li span.qnaNum{width: 15%;}
-  .qnaBoxes .qnaTable li span.qnaHit{display: none;}
-  
-  .qnaBoxes .qnaSearch{flex-wrap: wrap;}
-  .qnaBoxes .searchPaging{width: 90%;}
-  .qnaBoxes .searchSelect{width: calc(30%-2px);}
-  .qnaBoxes .qnaSearchInput{width: 70%; margin: 0;}
-  .qnaBoxes .qnaSearchBtn{width: 100%; margin-top: 2px;}
+  .qnaBoxes .qnaTable{width:90%;}
+  .qnaBoxes .qnaTable li span.qnaTit{width:60%;}
+  .qnaBoxes .qnaTable li span.qnaNum{width:15%;}
+  .qnaBoxes .qnaTable li span.qnaHit{display:none;}
 
-  .qnaBoxes .writeBox{width: 90%; margin: 20px auto 0;}
+  .qnaBoxes .qnaSearch{flex-wrap:wrap;}
+  .qnaBoxes .searchPaging{width:90%;}
+  .qnaBoxes .searchSelect{width:calc(30% - 2px);}
+  .qnaBoxes .qnaSearchInput{width:70%; margin:0;}
+  .qnaBoxes .qnaSearchBtn{width:100%; margin-top:2px;}
+
+  .qnaBoxes .writeBox{width:90%; margin:20px auto 0;}
+
+  /* qna view page style */
+  .qnaView .writerInfo{width:90%; text-align:center;}
+  .qnaView .writeBox{margin:5px auto 0; text-align:center;}
+  .qnaView .answerBox{width:90%; margin-top:20px;}
+  .qnaBoxes .writeBox button, 
+  .qnaBoxes .writeBox a{float:none;}
+
+  .qnaView .ansResult{width:90%;}
+  .qnaView .ansResult p.adminId a{width:100%; text-align:center; margin-top:3px; padding:5px 0;}
 }
