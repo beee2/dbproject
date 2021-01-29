@@ -1,4 +1,4 @@
-<li class="qnaTitle clear">
+              <li class="qnaTitle clear">
                 <span class="qnaNum">번호</span>
                 <span class="qnaId">아이디</span>
                 <span class="qnaTit">제목</span>

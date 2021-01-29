@@ -253,20 +253,50 @@
               </div>
             </div>
             <div class="formBox">
-              <form action="abc.php" method="post" class="form" name="form">
+              <form action="/gold/php_process/pages/msg_insert.php" method="post" class="form" name="msgForm">
                 <p class="nameMail">
-                  <input type="text" placeholder="Your Name" />
-                  <input type="text" placeholder="Your Email" />
+                  <input type="text" name="msgName" placeholder="Your Name"/>
+                  <input type="text" name="msgEmail" placeholder="Your Email" />
                 </p>
                 <p class="subject">
-                  <input type="text" placeholder="Subject" />
+                  <input type="text" name="msgTit" placeholder="Subject" />
                 </p>
                 <p class="message">
-                  <textarea placeholder="Your Message"></textarea>
+                  <textarea name="msgTxt" placeholder="Your Message"></textarea>
                 </p>
-                <a href="#">SEND MESSAGE</a>
+                <a href="#" class="msgSend">SEND MESSAGE</a>
               </form>
             </div>
+            <script>
+              let msgSendBtn=document.querySelector('.msgSend');
+              msgSendBtn.addEventListener('click',msgSend);
+
+              function msgSend(e){
+                e.preventDefault();
+                if(!document.msgForm.msgName.value){
+                  alert("이름을 입력해 주세요.");
+                  document.msgForm.msgName.focus();
+                  return;
+                }
+                if(!document.msgForm.msgEmail.value){
+                  alert("이메일을 입력해 주세요.");
+                  document.msgForm.msgEmail.focus();
+                  return;
+                }
+                if(!document.msgForm.msgTit.value){
+                  alert("제목을 입력해 주세요.");
+                  document.msgForm.msgTit.focus();
+                  return;
+                }
+                if(!document.msgForm.msgTxt.value){
+                  alert("내용을 입력해 주세요.");
+                  document.msgForm.msgTxt.focus();
+                  return;
+                }
+                
+                document.msgForm.submit();
+              }
+            </script>
           </div>
         </div>
       </section>

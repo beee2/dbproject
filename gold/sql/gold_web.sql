@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 21-01-12 07:44
+-- 생성 시간: 21-01-29 02:17
 -- 서버 버전: 10.4.16-MariaDB
 -- PHP 버전: 7.4.12
 
@@ -30,13 +30,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `gold_web` (
   `GOLD_WEB_num` int(11) NOT NULL COMMENT '고유번호',
   `GOLD_WEB_tit` varchar(20) CHARACTER SET utf8 NOT NULL COMMENT '제목',
-  `GOLD_WEB_ser` varchar(20) CHARACTER SET utf8 NOT NULL COMMENT '시리얼넘버',
   `GOLD_WEB_des` text CHARACTER SET utf8 NOT NULL COMMENT '설명',
-  `GOLD_WEB_img` varchar(30) CHARACTER SET utf8 NOT NULL COMMENT '사진',
-  `GOLD_WEB_thumb` varchar(30) CHARACTER SET utf8 NOT NULL COMMENT '썸네일사진',
-  `GOLD_WEB_cli` varchar(30) CHARACTER SET utf8 NOT NULL COMMENT '납품처',
-  `GOLD_WEB_reg` varchar(15) CHARACTER SET utf8 DEFAULT NULL COMMENT '등록일',
-  `GOLD_WEB_dom` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '도메인주소'
+  `GOLD_WEB_thumb` varchar(30) CHARACTER SET utf8 NOT NULL COMMENT '썸네일이미지',
+  `GOLD_WEB_dom` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '도메인'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
