@@ -10,8 +10,6 @@
 
   //database connect
   include $_SERVER['DOCUMENT_ROOT']."/gold/php_process/connect/db_connect.php";
-
-
   $sql="insert into gold_ans(
     GOLD_ANS_QNA_num,
     GOLD_ANS_con,

@@ -255,7 +255,7 @@
             <div class="formBox">
               <form action="/gold/php_process/pages/msg_insert.php" method="post" class="form" name="msgForm">
                 <p class="nameMail">
-                  <input type="text" name="msgName" placeholder="Your Name"/>
+                  <input type="text" name="msgName" placeholder="Your Name" />
                   <input type="text" name="msgEmail" placeholder="Your Email" />
                 </p>
                 <p class="subject">
@@ -268,32 +268,35 @@
               </form>
             </div>
             <script>
-              let msgSendBtn=document.querySelector('.msgSend');
-              msgSendBtn.addEventListener('click',msgSend);
+              let msgSendBtn = document.querySelector('.msgSend');
+              msgSendBtn.addEventListener('click', msgSend);
 
               function msgSend(e){
                 e.preventDefault();
                 if(!document.msgForm.msgName.value){
-                  alert("이름을 입력해 주세요.");
+                  alert("성함를 입력해 주세요.");
                   document.msgForm.msgName.focus();
                   return;
                 }
+
                 if(!document.msgForm.msgEmail.value){
                   alert("이메일을 입력해 주세요.");
                   document.msgForm.msgEmail.focus();
                   return;
                 }
+
                 if(!document.msgForm.msgTit.value){
                   alert("제목을 입력해 주세요.");
                   document.msgForm.msgTit.focus();
                   return;
                 }
+
                 if(!document.msgForm.msgTxt.value){
                   alert("내용을 입력해 주세요.");
                   document.msgForm.msgTxt.focus();
                   return;
                 }
-                
+
                 document.msgForm.submit();
               }
             </script>

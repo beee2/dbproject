@@ -75,7 +75,7 @@
       <li><a href="/gold/pages/web/web.php">WEB</a></li>
       <li><a href="/gold/pages/app/app.php">APP</a></li>
       <li><a href="#">ABOUT</a></li>
-      <li><a href="/gold/pages/qna/qna.php">Q&A</a></li>
+      <li><a href="/gold/pages/qna/qna.php"">Q&A</a></li>
     </ul>
     <div class="mobileMenu">
       <i class="fa fa-bars"></i>

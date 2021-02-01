@@ -43,8 +43,10 @@ CREATE TABLE `gold_mem` (
 --
 
 INSERT INTO `gold_mem` (`GOLD_mem_num`, `GOLD_mem_id`, `GOLD_mem_name`, `GOLD_mem_email`, `GOLD_mem_pass`, `GOLD_mem_regi_day`, `GOLD_mem_level`, `GOLD_mem_point`) VALUES
-(2, 'beee2', '단비', 'beee2@naver.com', '1234', '2020-12-28 09:38:53', 1, 0),
-(4, 'beeee2', 'asd', 'asd@asd', 'asd', '2020-12-28 10:09:12', 9, 0);
+(2, 'marshall36', '한창호', 'marshall@daum.net', '1234', '2020-12-28 09:59:38', 1, 0),
+(4, 'limp36', '한창호', 'marshall@gmail.com', 'asdf', '2020-12-28 10:00:33', 9, 0),
+(6, 'asdf', 'asdf', 'asdf@asdf', 'asdf', '2020-12-30 02:32:53', 9, 0),
+(7, 'chang', '한창호', 'marshall@daum.net', '123456', '2021-01-07 04:02:46', 9, 0);
 
 --
 -- 덤프된 테이블의 인덱스
@@ -64,7 +66,7 @@ ALTER TABLE `gold_mem`
 -- 테이블의 AUTO_INCREMENT `gold_mem`
 --
 ALTER TABLE `gold_mem`
-  MODIFY `GOLD_mem_num` int(11) NOT NULL AUTO_INCREMENT COMMENT '고유번호', AUTO_INCREMENT=5;
+  MODIFY `GOLD_mem_num` int(11) NOT NULL AUTO_INCREMENT COMMENT '고유번호', AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

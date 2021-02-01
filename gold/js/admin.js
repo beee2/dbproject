@@ -1,13 +1,13 @@
 $(function(){
-  //admin page main tabs
-  const adminTab=function(){ //익명함수
+  // admin page main tabs
+  const adminTab = function(){
     $(".adminTabs button").click(function(){
 
-      const tabIndex=$(this).index();
+      let tabIndex = $(this).index();
 
-      $("this").removeClass("active"); //클래스 추가 
-      $(".adminPanel").eq(tabIndex).addClass("active");
-
+      $(".adminTabs button").removeClass("active");
+      $(this).addClass("active");
+      
       $(".adminPanel").hide();
       $(".adminPanel").eq(tabIndex).show();
     });
