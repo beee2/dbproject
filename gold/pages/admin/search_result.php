@@ -20,7 +20,7 @@
     <!-- qna css link -->
     <link rel="stylesheet" href="/gold/css/qna.css">
 
-    <!-- admin_view css link -->
+    <!-- admin css link -->
     <link rel="stylesheet" href="/gold/css/admin.css">
 
     <!-- animation css link -->
@@ -38,7 +38,7 @@
         <div class="center">
           <!-- contact title -->
           <div class="title">
-            <h2>Message Details</h2>
+            <h2>Search Result</h2>
             <div class="subTit">
               <span class="subLine"></span>
               <a href="#" class="subLink">View More Details</a>
@@ -47,45 +47,10 @@
           <!-- end of contact title -->
 
           <?php
-          $msg_num = $_GET['num'];
-          //database connect
-          include $_SERVER['DOCUMENT_ROOT']."/gold/php_process/connect/db_connect.php"; 
-          $sql="select * from gold_msg where GOLD_MSG_num=$msg_num";
-
-          $msg_result=mysqli_query($dbConn, $sql);
-          $msg_row=mysqli_fetch_array($msg_result);
-
-          $msg_id=$msg_row['GOLD_MSG_name'];
-          $msg_tit=$msg_row['GOLD_MSG_tit'];
-          $msg_con=$msg_row['GOLD_MSG_con'];
-          $msg_reg=$msg_row['GOLD_MSG_reg'];
-          $msg_email=$msg_row['GOLD_MSG_email'];
+            $include_path=$_GET['key'];
+            include $_SERVER["DOCUMENT_ROOT"]."/gold/include/$include_path.php" 
           ?>
 
-          <!-- qna_view.php 페이지와 동일한 클래스로 작성 -->
-          <div class="qnaBoxes qnaView adminView deWeBoxes">    
-            <div class="writerInfo">
-              <p>From <?=$msg_id?> / No.<?=$msg_num?> / <?=$msg_reg?></p>
-            </div>
-            <div class="writeBox clear">
-              <div class="writeForm">
-                <p class="adminTitInput">
-                  <label for="adminTitle">제목</label>
-                  <input type="text" name="adminTitle" id="adminTitle"placeholder="제목을 입력해 주세요." value="<?=$msg_tit?>">
-                </p>
-                <p class="adminTxtInput">
-                  <textarea name="adminTxt" placeholder="내용을 입력해 주세요"><?=$msg_con?></textarea>
-                </p>
-              </div>
-            </div>
-            <!-- end of write box -->
-
-            <div class="adminViewBtns">
-              <a href="mailto:<?=$msg_email?>">메일쓰기</a>
-              <a href="/gold/php_process/pages/msg_delete.php?num=<?=$msg_num?>">삭제</a>
-              <a href="/gold/pages/admin/admin.php">뒤로가기</a>       
-            </div>
-            
           </div> 
 
         </div>
